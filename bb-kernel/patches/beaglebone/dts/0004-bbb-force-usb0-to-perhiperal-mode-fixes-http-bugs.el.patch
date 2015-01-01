@@ -1,0 +1,26 @@
+From 09d16b94f655b9d03375d97562440fca5eca672f Mon Sep 17 00:00:00 2001
+From: Robert Nelson <robertcnelson@gmail.com>
+Date: Sun, 9 Nov 2014 15:35:23 -0600
+Subject: [PATCH 4/5] bbb: force usb0 to perhiperal mode, fixes:
+ http://bugs.elinux.org/issues/127
+
+Signed-off-by: Robert Nelson <robertcnelson@gmail.com>
+---
+ arch/arm/boot/dts/am335x-bone-common.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/arch/arm/boot/dts/am335x-bone-common.dtsi b/arch/arm/boot/dts/am335x-bone-common.dtsi
+index 5e0ab9d..014838e 100644
+--- a/arch/arm/boot/dts/am335x-bone-common.dtsi
++++ b/arch/arm/boot/dts/am335x-bone-common.dtsi
+@@ -94,6 +94,7 @@
+ 
+ &usb0 {
+ 	status = "okay";
++	dr_mode = "peripheral";
+ };
+ 
+ &usb1 {
+-- 
+2.1.1
+
